@@ -37,6 +37,7 @@
             this.columnHeaderRelation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderAction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnMatchCase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBoxAction = new System.Windows.Forms.ComboBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -44,14 +45,17 @@
             this.buttonRemove = new System.Windows.Forms.Button();
             this.labelThen = new System.Windows.Forms.Label();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonApply = new System.Windows.Forms.Button();
+            this.CaseSensitiveCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 13);
+            this.label1.Size = new System.Drawing.Size(274, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Display entried matching these conditions:";
             // 
@@ -76,10 +80,13 @@
             "Options",
             "AuthenticationLevel",
             "AuthenticationService",
-            "ImpersonationLevel"});
-            this.comboBoxSearchByColumn.Location = new System.Drawing.Point(12, 25);
+            "ImpersonationLevel",
+            "TimeStamp",
+            "TaskName"});
+            this.comboBoxSearchByColumn.Location = new System.Drawing.Point(16, 31);
+            this.comboBoxSearchByColumn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxSearchByColumn.Name = "comboBoxSearchByColumn";
-            this.comboBoxSearchByColumn.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSearchByColumn.Size = new System.Drawing.Size(160, 24);
             this.comboBoxSearchByColumn.TabIndex = 1;
             // 
             // comboBoxRelation
@@ -91,9 +98,10 @@
             "is",
             "begins with",
             "ends with"});
-            this.comboBoxRelation.Location = new System.Drawing.Point(140, 26);
+            this.comboBoxRelation.Location = new System.Drawing.Point(187, 32);
+            this.comboBoxRelation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxRelation.Name = "comboBoxRelation";
-            this.comboBoxRelation.Size = new System.Drawing.Size(87, 21);
+            this.comboBoxRelation.Size = new System.Drawing.Size(115, 24);
             this.comboBoxRelation.TabIndex = 2;
             // 
             // comboBoxValue
@@ -101,9 +109,10 @@
             this.comboBoxValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxValue.FormattingEnabled = true;
-            this.comboBoxValue.Location = new System.Drawing.Point(244, 25);
+            this.comboBoxValue.Location = new System.Drawing.Point(325, 31);
+            this.comboBoxValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxValue.Name = "comboBoxValue";
-            this.comboBoxValue.Size = new System.Drawing.Size(412, 21);
+            this.comboBoxValue.Size = new System.Drawing.Size(548, 24);
             this.comboBoxValue.TabIndex = 3;
             // 
             // listViewColumnFilters
@@ -116,11 +125,13 @@
             this.columnHeaderColumn,
             this.columnHeaderRelation,
             this.columnHeaderValue,
-            this.columnHeaderAction});
+            this.columnHeaderAction,
+            this.columnMatchCase});
             this.listViewColumnFilters.HideSelection = false;
-            this.listViewColumnFilters.Location = new System.Drawing.Point(15, 85);
+            this.listViewColumnFilters.Location = new System.Drawing.Point(20, 105);
+            this.listViewColumnFilters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listViewColumnFilters.Name = "listViewColumnFilters";
-            this.listViewColumnFilters.Size = new System.Drawing.Size(776, 312);
+            this.listViewColumnFilters.Size = new System.Drawing.Size(1033, 383);
             this.listViewColumnFilters.TabIndex = 4;
             this.listViewColumnFilters.UseCompatibleStateImageBehavior = false;
             this.listViewColumnFilters.View = System.Windows.Forms.View.Details;
@@ -143,6 +154,11 @@
             // 
             this.columnHeaderAction.Text = "Action";
             // 
+            // columnMatchCase
+            // 
+            this.columnMatchCase.Text = "Case Sensitive";
+            this.columnMatchCase.Width = 87;
+            // 
             // comboBoxAction
             // 
             this.comboBoxAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -151,17 +167,19 @@
             this.comboBoxAction.Items.AddRange(new object[] {
             "Include",
             "Exclude"});
-            this.comboBoxAction.Location = new System.Drawing.Point(704, 25);
+            this.comboBoxAction.Location = new System.Drawing.Point(939, 31);
+            this.comboBoxAction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxAction.Name = "comboBoxAction";
-            this.comboBoxAction.Size = new System.Drawing.Size(84, 21);
+            this.comboBoxAction.Size = new System.Drawing.Size(111, 24);
             this.comboBoxAction.TabIndex = 5;
             // 
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOK.Location = new System.Drawing.Point(623, 415);
+            this.buttonOK.Location = new System.Drawing.Point(735, 511);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 23);
+            this.buttonOK.Size = new System.Drawing.Size(100, 28);
             this.buttonOK.TabIndex = 6;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -170,9 +188,10 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(713, 415);
+            this.buttonCancel.Location = new System.Drawing.Point(843, 511);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(100, 28);
             this.buttonCancel.TabIndex = 7;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -181,9 +200,10 @@
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd.Location = new System.Drawing.Point(623, 56);
+            this.buttonAdd.Location = new System.Drawing.Point(831, 69);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 28);
             this.buttonAdd.TabIndex = 8;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -192,9 +212,10 @@
             // buttonRemove
             // 
             this.buttonRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRemove.Location = new System.Drawing.Point(713, 56);
+            this.buttonRemove.Location = new System.Drawing.Point(951, 69);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemove.Size = new System.Drawing.Size(100, 28);
             this.buttonRemove.TabIndex = 9;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -204,28 +225,55 @@
             // 
             this.labelThen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelThen.AutoSize = true;
-            this.labelThen.Location = new System.Drawing.Point(662, 28);
+            this.labelThen.Location = new System.Drawing.Point(883, 34);
+            this.labelThen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelThen.Name = "labelThen";
-            this.labelThen.Size = new System.Drawing.Size(28, 13);
+            this.labelThen.Size = new System.Drawing.Size(36, 17);
             this.labelThen.TabIndex = 10;
             this.labelThen.Text = "then";
             // 
             // buttonReset
             // 
             this.buttonReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonReset.Location = new System.Drawing.Point(15, 56);
+            this.buttonReset.Location = new System.Drawing.Point(20, 69);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonReset.Size = new System.Drawing.Size(100, 28);
             this.buttonReset.TabIndex = 11;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // buttonApply
+            // 
+            this.buttonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonApply.Location = new System.Drawing.Point(955, 511);
+            this.buttonApply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.Size = new System.Drawing.Size(100, 28);
+            this.buttonApply.TabIndex = 13;
+            this.buttonApply.Text = "Apply";
+            this.buttonApply.UseVisualStyleBackColor = true;
+            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
+            // 
+            // CaseSensitiveCheckBox
+            // 
+            this.CaseSensitiveCheckBox.AutoSize = true;
+            this.CaseSensitiveCheckBox.Location = new System.Drawing.Point(325, 65);
+            this.CaseSensitiveCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CaseSensitiveCheckBox.Name = "CaseSensitiveCheckBox";
+            this.CaseSensitiveCheckBox.Size = new System.Drawing.Size(104, 21);
+            this.CaseSensitiveCheckBox.TabIndex = 14;
+            this.CaseSensitiveCheckBox.Text = "Match Case";
+            this.CaseSensitiveCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ColumnFilter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.CaseSensitiveCheckBox);
+            this.Controls.Add(this.buttonApply);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.labelThen);
             this.Controls.Add(this.buttonRemove);
@@ -238,6 +286,7 @@
             this.Controls.Add(this.comboBoxRelation);
             this.Controls.Add(this.comboBoxSearchByColumn);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ColumnFilter";
             this.ShowIcon = false;
             this.Text = "RPCMon Filter";
@@ -264,5 +313,8 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Label labelThen;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonApply;
+        private System.Windows.Forms.ColumnHeader columnMatchCase;
+        private System.Windows.Forms.CheckBox CaseSensitiveCheckBox;
     }
 }

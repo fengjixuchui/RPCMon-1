@@ -29,12 +29,22 @@ namespace RPCMon
             AuthenticationLevel,
             AuthenticationService,
             ImpersonationLevel,
+            TimeStamp,
+            Task,
 
+        }
+
+        public enum eEvents
+        {
+            ClientStart = 0,
+            ServerStart,
+            ClientStop,
+            ServerStop,
         }
 
         public enum eFilterNames
         {
-            Column, Relation, Value, Action
+            Column, Relation, Value, Action, MatchCase
         }
 
         public enum eFormNames
